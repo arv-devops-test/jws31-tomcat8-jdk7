@@ -13,9 +13,7 @@ RUN usermod -a -G root jboss && \
 	chmod -R 774 /opt/webserver && \
 	chmod -R 774 /opt/jboss && \
 	chmod -R 774 /opt/run-java && \
-	chmod 664 /etc/passwd && \
-	chown -R jboss:root /usr/local/s2i && \
-        chown -R jboss:root /usr/local/dynamic-resources
+	chmod 664 /etc/passwd
 
 
 ENV JWS_HOME="/opt/webserver" JAVA_VERSION="1.7.0" HOME="/opt/jboss" SCRIPT_DEBUG="true" container="oci" \
