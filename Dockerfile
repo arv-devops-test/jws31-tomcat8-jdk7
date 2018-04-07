@@ -3,7 +3,6 @@ FROM jboss/base-jdk:7
 USER root
 
 COPY opt/ /opt/
-COPY local /usr/local
 
 # Modify jboss user
 RUN usermod -a -G root jboss && \
