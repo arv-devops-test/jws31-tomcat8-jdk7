@@ -9,10 +9,8 @@ RUN usermod -a -G root jboss && \
 	chown  root:root /opt && \
 	chmod -R 774 /opt && \
 	chown -R jboss:root /opt/webserver && \
-	chown -R jboss:root /opt/run-java && \
 	chmod -R 774 /opt/webserver && \
 	chmod -R 774 /opt/jboss && \
-	chmod -R 774 /opt/run-java && \
 	chmod 664 /etc/passwd
 
 
