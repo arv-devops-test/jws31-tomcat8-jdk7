@@ -57,4 +57,4 @@ LABEL io.k8s.description="Centos 7 with JWS 3.1 Tomcat 8 and JRE 1.7" \
 USER 0
 # TODO: Set the default CMD for the image
 #CMD [ "/opt/webserver/bin/launch.sh"; /bin/bash -c "trap : TERM INT; sleep infinity & wait" ]
-#CMD [ "/opt/webserver/bin/launch.sh" ]
+CMD [ "/opt/webserver/bin/catalina.sh", "run" ]
