@@ -73,3 +73,5 @@ else
 fi
 
 exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+
+while true: do sleep 10000; done

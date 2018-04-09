@@ -322,7 +322,7 @@ if [ $have_tty -eq 1 ]; then
   fi
 fi
 
-if [ "$1" = "jpda" -o "$DEBUG" = "true" ] ; then
+if [ "$1" = "jpda" ] ; then
   if [ -z "$JPDA_TRANSPORT" ]; then
     JPDA_TRANSPORT="dt_socket"
   fi
@@ -336,7 +336,7 @@ if [ "$1" = "jpda" -o "$DEBUG" = "true" ] ; then
     JPDA_OPTS="-agentlib:jdwp=transport=$JPDA_TRANSPORT,address=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND"
   fi
   CATALINA_OPTS="$JPDA_OPTS $CATALINA_OPTS"
-  [ "$DEBUG" != "true" ] && shift
+  shift
 fi
 
 if [ "$1" = "debug" ] ; then
@@ -468,8 +468,9 @@ elif [ "$1" = "start" ] ; then
   if [ ! -z "$CATALINA_PID" ]; then
     echo $! > "$CATALINA_PID"
   fi
-  echo $(whoami)
+
   echo "Tomcat started."
+  #while true; do sleep 10000; done
 
 elif [ "$1" = "stop" ] ; then
 
